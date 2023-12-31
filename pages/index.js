@@ -17,8 +17,8 @@ export default function Home({ produkte }) {
   );
 }
 
-export async function getServerSideProps() {
-   await mongodb.dbConnect();
+export async function getStaticProps() {
+  await mongodb.dbConnect();
   const produkte = await Produkt.find({}).lean();
   return {
     props: {
