@@ -108,7 +108,7 @@ export default function Produktseite({ produkt }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths(context) {
   const url = context.params.url;
   await mongodb.dbConnect();
   const produkt = await Produkt.findOne({ url }).lean();
