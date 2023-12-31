@@ -106,7 +106,7 @@ export default function Bestellung({ bestellung }) {
   }
 }
 
-export async function getStaticPaths({ params }) {
+export async function getStaticProps({ params }) {
   const res = await axios.get(
     `http://localhost:3000/api/bestellungen/${params.nr}`
   );
